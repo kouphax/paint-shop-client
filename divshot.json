@@ -3,5 +3,6 @@
   "root": "./public/",
   "clean_urls": true,
   "cache_control": {},
-  "routes": {}
+  "routes": {},
+  "exclude": [".module-cache/"]
 }

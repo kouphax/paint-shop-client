@@ -1,3 +1,8 @@
+language: node_js
+before_script:
+  - npm install -g react-tools
+script:
+  - jsx src/ public/
 deploy:
   provider: divshot
   environment:
