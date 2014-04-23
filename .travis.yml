@@ -1,0 +1,9 @@
+deploy:
+  provider: divshot
+  environment:
+    master: development
+    staging: staging
+    production: production
+  skip_cleanup: true
+  api_key:
+    secure: LIl0i5hOxkHgbWSkGNTxXDEkSaSx3pkmRYN0Noq4eLngMG6G1nbM2xHEDG/YT27yPicy5IdlG+L/JDfsEcOREK8zPxKmrCleJvrCOIkbuSsCkS/3x/a5Y2EYdGx1tePR6rMRZa6ze6fr0Aq1aqEaRJOnM1Pfu1mejKhLpI+8idY=
