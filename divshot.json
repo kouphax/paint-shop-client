@@ -1,6 +1,6 @@
 {
   "name": "paint-shop",
-  "root": "./",
+  "root": "./public/",
   "clean_urls": true,
   "cache_control": {},
   "routes": {}
