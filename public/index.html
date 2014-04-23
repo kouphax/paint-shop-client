@@ -14,8 +14,8 @@
 </head>
 <body>
   <script type='text/javascript' src='http://code.jquery.com/jquery-2.1.0.js'></script>
-  <script type='text/javascript' src="http://fb.me/JSXTransformer-0.10.0.js"></script>  
-  <script type='text/javascript' src="http://fb.me/react-with-addons-0.10.0.js"></script>  
+  <script type='text/javascript' src="http://fb.me/JSXTransformer-0.10.0.js"></script>
+  <script type='text/javascript' src="http://fb.me/react-with-addons-0.10.0.js"></script>
   <script type="text/jsx">
     /** @jsx React.DOM */
     var Product = React.createClass({
@@ -38,12 +38,12 @@
               <p>Quantity: {data.quantity}</p>
             </td>
             <td>
-              <button className="add-to-cart-btn" 
+              <button className="add-to-cart-btn"
                       onClick={ this.addToCart.bind(null, data) }>
                 Add to Cart
               </button>
             </td>
-          </tr>  
+          </tr>
         )
       }
     })
@@ -51,7 +51,7 @@
     var ProductPaginator = React.createClass({
       render: function() {
         if(this.props.meta){
-          var meta = this.props.meta;      
+          var meta = this.props.meta;
           var pages = meta.total/meta.limit;
           var current = (meta.start/meta.limit) + 1;
           var pagerEls = Array.apply(null, Array(pages))
@@ -68,7 +68,7 @@
           </ul>
         } else {
           return <ul className="pagination">
-          </ul>    
+          </ul>
         }
       }
     });
@@ -82,11 +82,11 @@
       componentDidMount: function(){
         this.getPage(0, 10);
       },
-      getPage: function(start, limit){  
-        $.get("http://paint-shop.herokuapp.com/products", 
-          { start : start, limit: limit }, 
-          function(result) { 
-            this.setState(result); 
+      getPage: function(start, limit){
+        $.get("http://paint-shop.herokuapp.com/products",
+          { start : start, limit: limit },
+          function(result) {
+            this.setState(result);
           }.bind(this)
         );
         return false;
@@ -104,19 +104,19 @@
                 }
               </tbody>
             </table>
-            <ProductPaginator meta={this.state.meta} 
+            <ProductPaginator meta={this.state.meta}
                               onElementClick={this.getPage} />
           </div>
-        )   
+        )
       }
     })
 
     var ShoppingCart = React.createClass({
       addToCart: function(_, data){
-        var items = this.state.items    
+        var items = this.state.items
         items.push(data);
         this.setState({ items: items })
-      },  
+      },
       getInitialState: function(){
         return {
           items: []
@@ -149,17 +149,17 @@
         )
       }
     })
-  
+
     var Application = React.createClass({
-      statics: { 
-        bus: $({}) 
+      statics: {
+        bus: $({})
       },
       render: function() {
         return (
           <div className="container">
             <div className="jumbotron">
               <h1>HTML Paint Shop</h1>
-              <h3>Exquisite HTML friendly paints for your house and garden.</h3>
+              <h3>Exquisite HTML friendly paints for your house and garden. Instagram friendly.</h3>
             </div>
             <div className="row">
               <div className="col-md-8">
@@ -168,13 +168,13 @@
               <div className="col-md-4">
                 <ShoppingCart />
               </div>
-            </div>                
+            </div>
           </div>
         )
       }
     })
-     
+
     React.renderComponent(<Application />, document.body);
-  </script>  
+  </script>
 </body>
 </html>
